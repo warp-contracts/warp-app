@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {SmartWeaveWebFactory} from "redstone-smartweave";
+import {LoggerFactory, SmartWeaveWebFactory} from "redstone-smartweave";
 import Arweave from "arweave";
 
 const arweave = Arweave.init({
@@ -11,6 +11,8 @@ const arweave = Arweave.init({
   timeout: 60000, // Network request timeouts in milliseconds
   logging: false // Enable network request logging
 });
+
+LoggerFactory.INST.logLevel("silly");
 
 const smartweave = SmartWeaveWebFactory.memCached(arweave);
 
@@ -35,9 +37,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
-        <div>
+        <pre className="pre-format">
           {JSON.stringify(contractState)}
-        </div>
+        </pre>
       </header>
     </div>
   );
