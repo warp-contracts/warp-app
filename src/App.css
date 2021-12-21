@@ -32,6 +32,7 @@
   white-space: break-spaces;
   word-break: break-word;
   text-align: left;
+  margin: auto;
   font-size: 12px;
 }
 

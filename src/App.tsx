@@ -1,45 +1,55 @@
-import React, {useEffect, useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {LoggerFactory, SmartWeaveWebFactory} from "redstone-smartweave";
+import React, {useEffect, useState} from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import {
+  LoggerFactory,
+  SmartWeaveWebFactory,
+} from 'redstone-smartweave';
 import Arweave from "arweave";
+import {createCodesandbox} from "./createCodesandbox";
 
 const arweave = Arweave.init({
-  host: 'dh48zl0solow5.cloudfront.net', // Hostname or IP address for a Arweave host
+  host: "arweave.net", // Hostname or IP address for a Arweave host
   port: 443, // Port
-  protocol: 'https', // Network protocol http or https
+  protocol: "https", // Network protocol http or https
   timeout: 60000, // Network request timeouts in milliseconds
-  logging: false // Enable network request logging
+  logging: false, // Enable network request logging
 });
 
-LoggerFactory.INST.logLevel("silly");
+const smartweave = SmartWeaveWebFactory
+  .memCached(arweave);
 
-const smartweave = SmartWeaveWebFactory.memCached(arweave);
+const contractTxId = "Daj-MNSnH55TDfxqC7v4eq0lKzVIwh98srUaWqyuZtY"
 
-const providersRegistryContract = smartweave.contract(
-  "OrO8n453N6bx921wtsEs-0OCImBLCItNU5oSbFKlFuU"
-);
+const contract = smartweave.contract(contractTxId);
 
 function App() {
-
   const [contractState, setContractState] = useState({});
+
+  const [iframeData, setIframeData] = React.useState<any>(null);
+  const embedCodesandbox = React.useCallback(async () => {
+    const data = await createCodesandbox(contractTxId);
+    setIframeData(data);
+  }, []);
 
   useEffect(() => {
     async function fetchContractData() {
-      const state = await providersRegistryContract.readState();
-      setContractState(state);
+      const result: any = await contract.readState();
+      setContractState(result.validity);
     }
 
-    fetchContractData();
+    // fetchContractData();
   }, []);
 
   return (
     <div className="App">
+      <button onClick={embedCodesandbox}>create and embed a codesandbox</button>
+      <div>{iframeData ? <iframe title="test" {...iframeData} /> : null}</div>
+
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
-        <pre className="pre-format">
-          {JSON.stringify(contractState)}
-        </pre>
+        <pre className="pre-format">{JSON.stringify(contractState)}</pre>
       </header>
     </div>
   );
