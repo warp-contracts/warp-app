@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import {
-  LoggerFactory,
+  LoggerFactory, MemCache, RedstoneGatewayContractDefinitionLoader, RedstoneGatewayInteractionsLoader,
   SmartWeaveWebFactory,
 } from 'redstone-smartweave';
 import Arweave from "arweave";
@@ -17,9 +17,12 @@ const arweave = Arweave.init({
 });
 
 const smartweave = SmartWeaveWebFactory
-  .memCached(arweave);
+  .memCachedBased(arweave)
+  .setInteractionsLoader(new RedstoneGatewayInteractionsLoader("https://gateway.redstone.finance"))
+  .setDefinitionLoader(new RedstoneGatewayContractDefinitionLoader("https://gateway.redstone.finance", arweave, new MemCache()))
+  .build();
 
-const contractTxId = "Daj-MNSnH55TDfxqC7v4eq0lKzVIwh98srUaWqyuZtY"
+const contractTxId = "Daj-MNSnH55TDfxqC7v4eq0lKzVIwh98srUaWqyuZtY";
 
 const contract = smartweave.contract(contractTxId);
 
@@ -38,7 +41,7 @@ function App() {
       setContractState(result.validity);
     }
 
-    // fetchContractData();
+    fetchContractData();
   }, []);
 
   return (
