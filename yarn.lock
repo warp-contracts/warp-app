@@ -9292,10 +9292,17 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-redstone-smartweave@0.4.14:
-  version "0.4.14"
-  resolved "https://registry.yarnpkg.com/redstone-smartweave/-/redstone-smartweave-0.4.14.tgz#77fa0566a8bbdf7f863f341aec486714f41b2183"
-  integrity sha512-2zlbXUxg2J49DyC+oSI4nmYH7f1F0Dvuj56zn/nWnQzYQonH7z2IfAeKvOlvSun9/fCNtb7/hreuGcXFE/z5wQ==
+redstone-isomorphic@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/redstone-isomorphic/-/redstone-isomorphic-1.0.2.tgz#d1cfccca24c860212d3a3d8d76103da0e9445a24"
+  integrity sha512-UK4oxxJmb4nowAM3p47CNwkiKFA0Ewn1i7LMU8ix7fdCefSNoMetar3LATyBYoCdGSNJKa8tLLvbnWfSfwwO5w==
+  dependencies:
+    undici "^4.12.2"
+
+redstone-smartweave@0.4.21:
+  version "0.4.21"
+  resolved "https://registry.yarnpkg.com/redstone-smartweave/-/redstone-smartweave-0.4.21.tgz#e5bbfcc927b5830f000614e878d09ee7feb9cdc8"
+  integrity sha512-TdKLvKfetXssLvbMIUppsCysIy4oSYil4vFZWVqSzPx1lqInFryALyK/k8NQIrGqMMTi7feLW0uQpYmK2FXsMA==
   dependencies:
     "@weavery/clarity" "^0.1.5"
     arweave "^1.10.16"
@@ -9305,6 +9312,7 @@ redstone-smartweave@0.4.14:
     json-beautify "^1.1.1"
     knex "^0.95.14"
     lodash "^4.17.21"
+    redstone-isomorphic "^1.0.2"
     tslog "^3.2.2"
     undici "^4.12.1"
 
@@ -10837,6 +10845,11 @@ undici@^4.12.1:
   version "4.12.1"
   resolved "https://registry.yarnpkg.com/undici/-/undici-4.12.1.tgz#3a7b5fb12f835a96a65397dd94578464b08d1c27"
   integrity sha512-MSfap7YiQJqTPP12C11PFRs9raZuVicDbwsZHTjB0a8+SsCqt7KdUis54f373yf7ZFhJzAkGJLaKm0202OIxHg==
+
+undici@^4.12.2:
+  version "4.12.2"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-4.12.2.tgz#f2fc50ca77a774ed8c0e7067c9361ee18a2f422b"
+  integrity sha512-RZj6SbkQFs5O/pJCboGEo6l5DTCe3Zg4r/8Z/0/2qnIv08+s6zL4akohOPMYWKc3mzwv15WTvsfMWaafZcvYoQ==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"

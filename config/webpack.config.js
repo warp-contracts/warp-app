@@ -162,10 +162,6 @@ module.exports = function (webpackEnv) {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
-    externals: {
-      'v8': '{}',
-      'undici': '{}',
-    },
     devtool: isEnvProduction
       ? shouldUseSourceMap
         ? 'source-map'
@@ -752,8 +748,7 @@ module.exports = function (webpackEnv) {
       http2: 'empty',
       net: 'empty',
       tls: 'empty',
-      child_process: 'empty',
-      v8: 'empty'
+      child_process: 'empty'
     },
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
