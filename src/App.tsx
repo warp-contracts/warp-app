@@ -1,28 +1,37 @@
-import React, {useEffect, useState} from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
 import {
-  LoggerFactory, MemCache, RedstoneGatewayContractDefinitionLoader, RedstoneGatewayInteractionsLoader,
+  MemCache,
+  RedstoneGatewayContractDefinitionLoader,
+  RedstoneGatewayInteractionsLoader,
   SmartWeaveWebFactory,
 } from 'redstone-smartweave';
-import Arweave from "arweave";
-import {createCodesandbox} from "./createCodesandbox";
+import Arweave from 'arweave';
+import { createCodesandbox } from './createCodesandbox';
 
 const arweave = Arweave.init({
-  host: "arweave.net", // Hostname or IP address for a Arweave host
+  host: 'arweave.net', // Hostname or IP address for a Arweave host
   port: 443, // Port
-  protocol: "https", // Network protocol http or https
+  protocol: 'https', // Network protocol http or https
   timeout: 60000, // Network request timeouts in milliseconds
   logging: false, // Enable network request logging
 });
 
-const smartweave = SmartWeaveWebFactory
-  .memCachedBased(arweave)
-  .setInteractionsLoader(new RedstoneGatewayInteractionsLoader("https://gateway.redstone.finance"))
-  .setDefinitionLoader(new RedstoneGatewayContractDefinitionLoader("https://gateway.redstone.finance", arweave, new MemCache()))
+const smartweave = SmartWeaveWebFactory.memCachedBased(arweave)
+  .setInteractionsLoader(
+    new RedstoneGatewayInteractionsLoader('https://gateway.redstone.finance')
+  )
+  .setDefinitionLoader(
+    new RedstoneGatewayContractDefinitionLoader(
+      'https://gateway.redstone.finance',
+      arweave,
+      new MemCache()
+    )
+  )
   .build();
 
-const contractTxId = "Daj-MNSnH55TDfxqC7v4eq0lKzVIwh98srUaWqyuZtY";
+const contractTxId = 'Daj-MNSnH55TDfxqC7v4eq0lKzVIwh98srUaWqyuZtY';
 
 const contract = smartweave.contract(contractTxId);
 
@@ -49,9 +58,8 @@ function App() {
       <button onClick={embedCodesandbox}>create and embed a codesandbox</button>
       <div>{iframeData ? <iframe title="test" {...iframeData} /> : null}</div>
 
-
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
+        <img src={logo} className="App-logo" alt="logo" />
         <pre className="pre-format">{JSON.stringify(contractState)}</pre>
       </header>
     </div>
