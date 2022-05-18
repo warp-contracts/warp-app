@@ -21,6 +21,17 @@ const arweave = Arweave.init({
 
 const smartweave = SmartWeaveWebFactory.memCachedBased(arweave).build();
 
+// test environment
+
+// const arweave = Arweave.init({
+//   host: 'testnet.redstone.tools', // Hostname or IP address for a Arweave host
+//   port: 443, // Port
+//   protocol: 'https' // Network protocol http or https
+// });
+
+// const smartweave = SmartWeaveWebFactory.memCachedBased(arweave).useArweaveGateway().build();
+
+
 //const contractTxId = "_IHQHkZrZfB3lN69Hw3xTRcHv2cBiNgh1HG1WENydP4"; // AS
 const contractTxId = 'SpTC4JuzZ2JDXR-lar2SbI2yJOxPgwi504BICe0uf1g'; // Rust
 //const contractTxId = "QkVjYoiCq4dvru8z6laZmrL55vKskwbqyrAwGSn4cRQ"; // Go
