@@ -31,9 +31,8 @@ const smartweave = SmartWeaveWebFactory.memCachedBased(arweave).build();
 
 // const smartweave = SmartWeaveWebFactory.memCachedBased(arweave).useArweaveGateway().build();
 
-
 //const contractTxId = "_IHQHkZrZfB3lN69Hw3xTRcHv2cBiNgh1HG1WENydP4"; // AS
-const contractTxId = 'SpTC4JuzZ2JDXR-lar2SbI2yJOxPgwi504BICe0uf1g'; // Rust
+const contractTxId = 'Ok8pQCOUUTXW7HAopBAts3x81efZfZ-v0NYuxxWjrTw'; // Rust
 //const contractTxId = "QkVjYoiCq4dvru8z6laZmrL55vKskwbqyrAwGSn4cRQ"; // Go
 
 const contract = smartweave.contract(contractTxId);
