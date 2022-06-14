@@ -2530,7 +2530,7 @@ arrify@^2.0.1:
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
   integrity sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==
 
-arweave@1.11.4, arweave@^1.11.4:
+arweave@1.11.4:
   version "1.11.4"
   resolved "https://registry.yarnpkg.com/arweave/-/arweave-1.11.4.tgz#19e5850d3b9f655cacb0953b36a12ac6596b195c"
   integrity sha512-EPUms1OMet/VFmYMefgxIpj17PIlIZzIteiHAn0tetN+d/LRV6N9CCsrg/t22hL6yLGdGRHrYlDEdsWqjwSSYg==
@@ -9813,28 +9813,6 @@ redstone-isomorphic@^1.1.0:
     safe-buffer "^5.1.2"
     undici "^4.16.0"
 
-redstone-smartweave@^0.5.11:
-  version "0.5.11"
-  resolved "https://registry.yarnpkg.com/redstone-smartweave/-/redstone-smartweave-0.5.11.tgz#02fa2ea2b0afc8ea55a36dfe0d4d4eae616ff380"
-  integrity sha512-qBLjsnJqUyFS9G/8VHBGhh6O4B6jPIRsdBeL8M+9zxBfCUc8ZXzRbtYdHRpKupCZIU1cNk+wVH9PgMZQNPM5DQ==
-  dependencies:
-    "@assemblyscript/loader" "^0.19.23"
-    "@idena/vrf-js" "^1.0.1"
-    archiver "^5.3.0"
-    arweave "1.11.4"
-    bignumber.js "^9.0.1"
-    elliptic "^6.5.4"
-    fast-copy "^2.1.1"
-    knex "^0.95.14"
-    lodash "^4.17.21"
-    redstone-isomorphic "1.1.6"
-    redstone-wasm-metering "1.0.0"
-    safe-stable-stringify "2.3.1"
-    stream-buffers "^3.0.2"
-    tslog "^3.2.2"
-    unzipit "^1.4.0"
-    vm2 "3.9.9"
-
 redstone-wasm-json-toolkit@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/redstone-wasm-json-toolkit/-/redstone-wasm-json-toolkit-1.0.0.tgz#e7f0bf39c4566d445769ac6626351ce2512b61cb"
@@ -11745,6 +11723,28 @@ walker@^1.0.7, walker@~1.0.5:
   integrity sha1-L3+bj9ENZ3JisYqITijRlhjgKPs=
   dependencies:
     makeerror "1.0.x"
+
+warp-contracts@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/warp-contracts/-/warp-contracts-1.0.1.tgz#4f238e764d483c03e7eaa1bedc51a7efe1507480"
+  integrity sha512-O6t45YavlAIwQpIjL6EWTS3Pt2MXPX5/e+XyE3qT5O1LdBHn9KN7Vu43AdX0UVQwHr27PVzC6PdcfU5A3FWPiQ==
+  dependencies:
+    "@assemblyscript/loader" "^0.19.23"
+    "@idena/vrf-js" "^1.0.1"
+    archiver "^5.3.0"
+    arweave "1.11.4"
+    bignumber.js "^9.0.1"
+    elliptic "^6.5.4"
+    fast-copy "^2.1.1"
+    knex "^0.95.14"
+    lodash "^4.17.21"
+    redstone-isomorphic "1.1.6"
+    redstone-wasm-metering "1.0.0"
+    safe-stable-stringify "2.3.1"
+    stream-buffers "^3.0.2"
+    tslog "^3.2.2"
+    unzipit "^1.4.0"
+    vm2 "3.9.9"
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"

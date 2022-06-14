@@ -2,12 +2,8 @@ import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {
-  LoggerFactory,
-  MemCache,
-  RedstoneGatewayContractDefinitionLoader,
-  RedstoneGatewayInteractionsLoader,
-  SmartWeaveWebFactory,
-} from 'redstone-smartweave';
+  WarpWebFactory,
+} from 'warp-contracts';
 import Arweave from 'arweave';
 import { createCodesandbox } from './createCodesandbox';
 
@@ -19,7 +15,7 @@ const arweave = Arweave.init({
   logging: false, // Enable network request logging
 });
 
-const smartweave = SmartWeaveWebFactory.memCachedBased(arweave).build();
+const smartweave = WarpWebFactory.memCachedBased(arweave).build();
 
 // test environment
 
